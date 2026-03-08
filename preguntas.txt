@@ -1,0 +1,11 @@
+1. Si ves PreparedStatement, ¿en qué capa va y por qué?
+
+PreparedStatement es una clase que proviene de JDBC, por lo tanto la situaremos en la capa de repository, en la implementación es decir JdbcLibroRepository.
+
+2. ¿Por qué LibroService depende de LibroRepository y no de JdbcLibroRepository?
+
+LibroService depende de la interfaz LibroRepository, es un patrón de diseño llamado Repository pattern el hecho de no depender de implementaciones, inyectamos interfaces que luego serán implementadas por otras clases.
+
+3. Pon un ejemplo de regla que iría en Service (no en Repository).
+
+Podriamos poner una regla en service de no poder persistir un Libro con año negativo o precio negativo.
